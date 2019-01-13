@@ -5,15 +5,12 @@ export default class Component2 extends Component {
   render() {
     return (
       <Spring {...springProps} >
-        {props => (
+        { props => (
           <div style={ props }>
             <div style={ c2Style }>
               <h1>Component2</h1>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, quaerat officia repellendus dignissimos quas architecto repudiandae impedit provident culpa aperiam sint laudantium sapiente blanditiis necessitatibus totam iure iste fuga repellat!</p>
-              <button 
-                style={ btn } 
-                onClick={ this.props.toggle }
-              >
+              <button style={ btn } onClick={ this.props.toggle } >
                 Toggle Component 3
               </button>
             </div>

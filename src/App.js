@@ -19,12 +19,9 @@ class App extends Component {
       <Fragment>
         <Component1 />
         <Component2 toggle={ this.toggle }/>
-        <Transition 
-          {...transition}
-          items={ this.state.showComponent3 }
-        >
-          { show => show && (props => (
-            <animated.div style={ props }>
+        <Transition {...transition} items={ this.state.showComponent3 } >
+          { show => show && ( props => (
+            <animated.div style={ props } >
               <Component3 />
             </animated.div>
           ))}
