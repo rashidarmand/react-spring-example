@@ -10,22 +10,18 @@ class App extends Component {
     showComponent3: false
   }
 
-  toggle = e => this.setState(prevState => ({
+  toggle = () => this.setState(prevState => ({
     showComponent3: !prevState.showComponent3
   }))
 
   render() {
-    console.log(this.transition)
     return (
       <Fragment>
         <Component1 />
         <Component2 toggle={ this.toggle }/>
         <Transition 
-          native
+          {...transition}
           items={ this.state.showComponent3 }
-          from={{ opacity: 0 }}
-          enter={{ opacity: 1 }}
-          leave={{ opacity: 0 }}
         >
           { show => show && (props => (
             <animated.div style={ props }>
@@ -36,6 +32,13 @@ class App extends Component {
       </Fragment>
     );
   }
+}
+
+const transition = {
+  native: true,
+  from: { opacity: 0 },
+  enter: { opacity: 1 },
+  leave: { opacity: 0 } 
 }
 
 export default App;

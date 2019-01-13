@@ -4,11 +4,7 @@ import { Spring } from 'react-spring'
 export default class Component2 extends Component {
   render() {
     return (
-      <Spring
-      from={{ opacity: 0 }}
-      to={{ opacity: 1 }}
-      config={{ delay: 1000, duration: 1000 }}
-      >
+      <Spring {...springProps} >
         {props => (
           <div style={ props }>
             <div style={ c2Style }>
@@ -26,6 +22,12 @@ export default class Component2 extends Component {
       </Spring>
     )
   }
+}
+
+const springProps = {
+  from: { opacity: 0 },
+  to: { opacity: 1 },
+  config: { delay: 1000, duration: 1000 }
 }
 
 const c2Style = {
